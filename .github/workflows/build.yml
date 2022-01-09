@@ -3,7 +3,7 @@ on:
 
 jobs:
   build-linux:
-    runs-on: ubuntu-18
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
@@ -31,8 +31,8 @@ jobs:
       - name: Build executable
         run: |
           pip install --upgrade pip
-          python3.8 -m venv .venv
-          source .venv/bin/activate
+          python -m venv .venv
+          .venv\bin\activate.bat
           pip install -r requirements.txt
           pyinstaller -wF windows.py
       - uses: actions/upload-artifact@v2
