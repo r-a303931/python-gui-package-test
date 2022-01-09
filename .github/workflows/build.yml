@@ -3,7 +3,7 @@ on:
 
 jobs:
   build-linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
@@ -16,7 +16,7 @@ jobs:
           source .venv/bin/activate
           pip install -r requirements.txt
           pyinstaller -wF linux.py
-      - uses: actions/upload-artifactt@v2
+      - uses: actions/upload-artifact@v2
         with:
           name: linux
           path: dist/linux
@@ -35,7 +35,7 @@ jobs:
           source .venv/bin/activate
           pip install -r requirements.txt
           pyinstaller -wF windows.py
-      - uses: actions/upload-artifactt@v2
+      - uses: actions/upload-artifact@v2
         with:
           name: windows.exe
           path: dist/windows.exe
