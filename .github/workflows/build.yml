@@ -28,7 +28,7 @@ jobs:
       - name: Build executable
         run: |
           pip install -r requirements.txt
-          .venv\bin\pyinstaller.exe -wF windows.py
+          .\.venv\bin\pyinstaller.exe -wF windows.py
       - uses: actions/upload-artifact@v2
         with:
           name: windows.exe
