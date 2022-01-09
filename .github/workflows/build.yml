@@ -27,8 +27,8 @@ jobs:
           python-version: 3.8
       - name: Build executable
         run: |
+          venv -c -i env
           pip install -r requirements.txt
-          whereis pyinstaller.exe
           pyinstaller.exe -wF windows.py
       - uses: actions/upload-artifact@v2
         with:
