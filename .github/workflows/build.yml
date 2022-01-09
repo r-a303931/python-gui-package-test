@@ -11,8 +11,6 @@ jobs:
           python-version: 3.8
       - name: Build executable
         run: |
-          python3.8 -m venv .venv
-          source .venv/bin/activate
           pip install -r requirements.txt
           pyinstaller -wF linux.py
       - uses: actions/upload-artifact@v2
@@ -29,8 +27,6 @@ jobs:
           python-version: 3.8
       - name: Build executable
         run: |
-          python -m venv .venv
-          .venv\bin\Activate.ps1
           pip install -r requirements.txt
           pyinstaller -wF windows.py
       - uses: actions/upload-artifact@v2
