@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import PySimpleGUI as sg
+import PySimpleGUIQt as sg
 
 window = sg.Window('Window', layout=[[sg.Button('OK')]])
 
